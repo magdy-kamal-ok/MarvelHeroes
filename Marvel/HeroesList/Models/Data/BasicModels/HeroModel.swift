@@ -18,6 +18,7 @@ class HeroModel: Object,Mappable {
     @objc dynamic var descriptions:String = "";
     @objc dynamic var modified:String = "";
     @objc dynamic var resourceURI:String = "";
+    @objc dynamic var thumbnail:ThumbnailModel?
     @objc dynamic var comicModel:DetailsModel?
     @objc dynamic var seriesModel:DetailsModel?
     @objc dynamic var storiesModel:DetailsModel?
@@ -37,6 +38,7 @@ class HeroModel: Object,Mappable {
         descriptions    <- map["description"]
         modified        <- map["modified"]
         resourceURI     <- map["resourceURI"]
+        thumbnail       <- map["thumbnail"]
         comicModel      <- map["comics"]
         seriesModel     <- map["series"]
         storiesModel    <- map["stories"]

@@ -14,7 +14,11 @@ import ObjectMapper_Realm
 class HeroesListModel: Object,Mappable {
     
 
-    @objc dynamic var offset:Int = 0;
+    @objc dynamic var offset:Int = 0{
+        didSet {
+            compoundKey = compoundKeyValue()
+        }
+    }
     @objc dynamic var limit:Int = 0;
     @objc dynamic var total:Int = 0;
     @objc dynamic var count:Int = 0;

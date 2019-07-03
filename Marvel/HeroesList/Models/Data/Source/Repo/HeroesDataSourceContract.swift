@@ -38,4 +38,6 @@ protocol HeroesDataLocalSource {
     func insert(heroesResponseModel : U)
     
     func delete()
+    
+    func searchBy(name:String)->[HeroModel]?
 }

@@ -11,6 +11,7 @@ import RealmSwift
 import ObjectMapper
 
 class HeoresDao<R:Object>: HeroesDataLocalSource{
+
     
     func insert(heroesResponseModel : R) {
         do {
@@ -63,5 +64,17 @@ class HeoresDao<R:Object>: HeroesDataLocalSource{
             print(error)
         }
     }
+    func searchBy(name: String)->[HeroModel]? {
+        do {
+            let realm = try Realm()
+            return realm.objects(HeroModel.self).filter("name == %@", name).itemsResltToArray()
+            
+
+        } catch (let error) {
+            print(error)
+            return nil
+        }
+    }
+    
 }
 

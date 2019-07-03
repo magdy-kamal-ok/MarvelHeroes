@@ -16,6 +16,8 @@ import Alamofire
 
 class HeroesRepository<REMOTE:Mappable,LOCAL:Object>:
 HeroesDataSourceContract {
+  
+    
     
     typealias T = REMOTE
     
@@ -59,16 +61,9 @@ HeroesDataSourceContract {
             case .next(let responseObj):
                 self.objObservableRemote.onNext(responseObj)
             case .error(_):
-                if let resultData = self.fetch(withOffset: self.offset)
-                {
-                    //  _ =  self.repo1.fetch()
-                    
-                    self.objObservableDao.onNext(resultData)
-                }
-                else{
-                    
-                    self.errorModel.onNext(ErrorModel(desc: "network first time fail", code: 404))
-                }
+                
+                self.errorModel.onNext(ErrorModel(desc: "network first time fail", code: 600))
+                
             case .completed:
                 print("Completed")
             }
@@ -108,6 +103,8 @@ extension HeroesRepository{
     func delete() {
         objMessageDao.delete()
     }
-    
+    func searchBy(name: String) -> [HeroModel]? {
+        return objMessageDao.searchBy(name: name)
+    }
 }
 

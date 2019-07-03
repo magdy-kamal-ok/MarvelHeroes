@@ -12,18 +12,31 @@ import RxSwift
 import RxCocoa
 import Alamofire
 import RealmSwift
+
+protocol HeroesViewControllerDelegate: NSObjectProtocol {
+    
+    func showLoader(flag:Bool)
+    func refreshHeroesFinished()
+    func loadingMoreHeroesFinished()
+    func reloadHeroesData()
+    func showAlert(alert:UIAlertController)
+}
+
 class HeroesListViewModel: NSObject {
     private var repo = HeroesRepository<HeroesListResponseModel,HeroesListModel>()
     
     private var disposeBag = DisposeBag()
     public private(set) var resultMessagesObjs = PublishSubject<[HeroModel]>()
     
-    var currentOffset: Int = 1
-    var listTotalCount: Int = 1
-    var isLoadMore:Bool = false
+
     var searchString = ""
     var isSearch:Bool = false
-    var heroesList = [HeroModel]()
+    public private(set) var heroesList = [HeroModel]()
+    public private(set) var currentOffset: Int = 0
+    public private(set) var listTotalCount: Int = 0
+    public private(set) var isLoadingMore: Bool = false
+    public private(set) var isSwipeAndRefresh : Bool = false
+    weak var heroesViewControllerDelegate:HeroesViewControllerDelegate?
     
     private func initializeSubscribers()
     {
@@ -31,9 +44,12 @@ class HeroesListViewModel: NSObject {
         
         repo.objObservableRemote.asObservable().subscribe(onNext: { (heroesListResponseModel) in
             self.currentOffset =  (heroesListResponseModel.data?.offset)!
-            self.listTotalCount = (heroesListResponseModel.data?.count)!
+            self.listTotalCount = (heroesListResponseModel.data?.total)!
             
-            
+            if self.isSwipeAndRefresh
+            {
+                self.heroesList.removeAll()
+            }
            
             if self.isSearch
             {
@@ -43,7 +59,7 @@ class HeroesListViewModel: NSObject {
             self.repo.insert(heroesResponseModel: heroesListResponseModel.data!)
             self.heroesList.append(contentsOf: (heroesListResponseModel.data?.heroesList.toArray())!)
 
-            
+            self.setViewsStates()
         }, onError: { (err) in
             print(err)
         }, onCompleted: {
@@ -52,11 +68,14 @@ class HeroesListViewModel: NSObject {
         }).disposed(by: disposeBag)
         
         repo.objObservableDao.asObservable().subscribe(onNext: { (heroesList) in
-
-                self.currentOffset = heroesList.offset
-                self.listTotalCount = heroesList.count
-                self.heroesList.append(contentsOf: heroesList.heroesList.toArray())
             
+            if !self.isNetworkConnected()
+            {
+                self.currentOffset = heroesList.offset
+                self.listTotalCount = heroesList.total
+                self.heroesList.append(contentsOf: heroesList.heroesList.toArray())
+                self.setViewsStates()
+            }
             
                 
             
@@ -70,21 +89,89 @@ class HeroesListViewModel: NSObject {
     
     override init() {
         super.init()
-
         initializeSubscribers()
     }
     
-    
-    
-    func getHeroesData()
-    {
-        
-        repo.getHeroesData(url: Constants.BASE_URL, data: ParameterModel.init().dictionary, headers: nil)
-        
+    convenience init(delegate:HeroesViewControllerDelegate) {
+        self.init()
+        self.heroesViewControllerDelegate = delegate
     }
     
-    
+    func removeAllDataSource()
+    {
+        self.heroesList.removeAll()
+        heroesViewControllerDelegate?.reloadHeroesData()
 
+    }
+    func getHeroesData()
+    {
+        var parameters = ParameterModel.init(offset: self.currentOffset).dictionary
+        parameters.removeValue(forKey: "name")
+        repo.offset = self.currentOffset
+        repo.getHeroesData(url: Constants.BASE_URL, data: parameters, headers: nil)
+        
+    }
+    func searchByName(name:String)
+    {
+        if isNetworkConnected()
+        {
+            self.currentOffset = 0
+            repo.getHeroesData(url: Constants.BASE_URL, data: ParameterModel.init(offset: self.currentOffset, name: name).dictionary, headers: nil)
+        }
+        else
+        {
+            if let heroes = repo.searchBy(name: name)
+            {
+                self.heroesList.append(contentsOf: heroes)
+                self.heroesViewControllerDelegate?.reloadHeroesData()
+            }
+            
+        }
+    }
+    public func refreshMoviesList()
+    {
+        self.isSwipeAndRefresh = true
+        self.currentOffset = 0
+        self.getHeroesData()
+    }
+    public func loadMoreMovies()
+    {
+        self.isLoadingMore = true
+        self.currentOffset += 1
+        self.getHeroesData()
+    
+    }
+    
+    private func setViewsStates()
+    {
+        if self.isSwipeAndRefresh
+        {
+            stopRefreshing()
+        }
+        else if self.isLoadingMore
+        {
+            stopLoadingMore()
+        }
+        heroesViewControllerDelegate?.reloadHeroesData()
+    }
+    private func stopLoadingMore()
+    {
+        self.isLoadingMore = false
+        heroesViewControllerDelegate?.loadingMoreHeroesFinished()
+    }
+    private func stopRefreshing()
+    {
+        self.isSwipeAndRefresh = false
+        heroesViewControllerDelegate?.refreshHeroesFinished()
+    }
+    
+    private func stopAllLoaders()
+    {
+        heroesViewControllerDelegate?.showLoader(flag: false)
+        self.stopRefreshing()
+        self.stopLoadingMore()
+    }
+    
     fileprivate func isNetworkConnected() -> Bool{
         let reachability = Reachability()!
         return reachability.isReachable

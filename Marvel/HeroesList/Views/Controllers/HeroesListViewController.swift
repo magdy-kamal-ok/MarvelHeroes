@@ -8,15 +8,159 @@
 
 import UIKit
 
-class HeroesListViewController: UIViewController {
+class HeroesListViewController: BaseHeroesListViewController {
 
+    var heroesListViewModel:HeroesListViewModel?
+    // MARK: ViewController lifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        let vm = HeroesListViewModel.init()
-        vm.getHeroesData()
+        setupPagination()
+        setupSwipeRefresh()
+        heroesListViewModel = HeroesListViewModel.init(delegate: self)
+        heroesListViewModel?.getHeroesData()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.heroesTableView.reloadData()
+    }
+    // MARK: override required methods needed from parent class
+    override func setupCellNibNames() {
+        
+        self.heroesTableView.registerCellNib(cellClass: HeroTableViewCell.self)
+        self.heroesTableView.registerCellNib(cellClass: SearchTableViewCell.self)
+    }
+    
+    override func getCellHeight() -> CGFloat {
+        if (self.heroesListViewModel?.isSearch)!
+        {
+             return 100
+        }
+        else
+        {
+             return 150
+        }
+       
+    }
+    
+    override func getCellsCount(with section:Int) -> Int {
+        
+        return heroesListViewModel?.heroesList.count ?? 5
+        
+    }
+    
+    override func getSectionsCount() -> Int {
+        return 1
+    }
+    
+    
+    override func getCustomCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if (self.heroesListViewModel?.isSearch)!
+        {
+            let searchTableViewCell = tableView.dequeue() as SearchTableViewCell
+            let heroModel = self.heroesListViewModel?.heroesList[indexPath.row] as! HeroModel
+            searchTableViewCell.configureCell(heroModel: heroModel)
+            return searchTableViewCell
 
+        }
+        else
+        {
+            let heroTableViewCell = tableView.dequeue() as HeroTableViewCell
+            let heroModel = self.heroesListViewModel?.heroesList[indexPath.row] as! HeroModel
+            heroTableViewCell.configureCell(heroModel: heroModel)
+            return heroTableViewCell
+        }
+    }
+    
+    override func handlePaginationRequest() {
+        let totalListCount = (self.heroesListViewModel?.listTotalCount)!
+        let currentListCount = (self.heroesListViewModel?.heroesList.count)!
+        if currentListCount < totalListCount && !(self.heroesListViewModel?.isLoadingMore)!
+        {
+            showLoadingMoreView()
+            self.heroesListViewModel?.loadMoreMovies()
+        }
+    }
+    
+    override func swipeRefreshTableView() {
+        self.heroesListViewModel?.refreshMoviesList()
+        
+    }
+    
+    override func handleSearchBtnViews() {
+        self.heroesListViewModel?.removeAllDataSource()
 
+        self.navigationItem.rightBarButtonItem = nil
+        let searchBar = UISearchBar.init(frame: (self.navigationController?.navigationBar.frame)!)
+        searchBar.showsCancelButton = true
+        searchBar.barTintColor = .red
+        searchBar.delegate = self
+        self.navigationItem.titleView = searchBar
+        searchBar.becomeFirstResponder()
+    
 
+        
+    }
+}
+extension HeroesListViewController:HeroesViewControllerDelegate
+{
+    func showAlert(alert: UIAlertController) {
+       // self.present(alert, animated: true, completion: nil)
+    }
+    
+    func refreshHeroesFinished() {
+        self.checkRefreshControlState()
+    }
+    
+    func loadingMoreHeroesFinished() {
+        DispatchQueue.main.async {
+            self.removeLoadingMoreView()
+        }
+        
+    }
+    
+    func showLoader(flag: Bool) {
+        if flag
+        {
+            self.showProgressLoaderIndicator()
+        }
+        else
+        {
+            self.hideProgressLoaderIndicator()
+        }
+    }
+    
+    func reloadHeroesData() {
+        
+        DispatchQueue.main.async {
+            self.heroesTableView.reloadData()
+        }
+        
+    }
+    
+    
+    
+}
+extension HeroesListViewController:UISearchBarDelegate{
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        //
+        self.heroesListViewModel?.removeAllDataSource()
+        searchBar.tintColor = .red
+        self.heroesListViewModel?.isSearch = true
+        self.heroesListViewModel?.searchByName(name: searchBar.text!)
+        
+        
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        self.heroesListViewModel?.isSearch = false
+        self.navigationItem.titleView = nil
+        self.setupSearchBtnNavigation()
+        self.setNavTitle()
+        self.heroesListViewModel?.isSearch = false
+        self.heroesListViewModel?.getHeroesData()
+    }
+    
+    
 }

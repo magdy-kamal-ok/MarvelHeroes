@@ -52,6 +52,7 @@ extension AppDelegate
         let heroesListViewController  = HeroesListViewController(nibName: "HeroesListViewController", bundle: nil)
         self.window = UIWindow(frame: UIScreen.main.bounds)
         let navigationBar = UINavigationController.init(rootViewController: heroesListViewController)
+        navigationBar.navigationBar.barTintColor = UIColor.black
         self.window?.rootViewController = navigationBar
         window?.backgroundColor = UIColor.white
         self.window?.makeKeyAndVisible()

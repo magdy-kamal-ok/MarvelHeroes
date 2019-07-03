@@ -13,13 +13,15 @@ struct ParameterModel : Encodable {
     var hash:String = ""
     var ts:String = ""
     var offset:Int = 0
+    var name:String = ""
     
-    init(offset:Int = 0) {
+    init(offset:Int = 0, name:String = "") {
         self.offset = offset
         apikey =  Constants.API_KEY
         let hashGenerated = HashGenerator.MD5()
         self.ts = hashGenerated.0
         self.hash = hashGenerated.1
+        self.name = name
     }
     
     

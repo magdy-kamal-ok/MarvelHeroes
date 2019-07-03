@@ -30,6 +30,17 @@
 		0428746722CC116F00998A58 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0428746622CC116F00998A58 /* Constants.swift */; };
 		0428746C22CC150600998A58 /* HeroesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0428746A22CC150600998A58 /* HeroesListViewController.swift */; };
 		0428746D22CC150600998A58 /* HeroesListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0428746B22CC150600998A58 /* HeroesListViewController.xib */; };
+		0428747022CC3D2900998A58 /* BaseHeroesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0428746F22CC3D2900998A58 /* BaseHeroesListViewController.swift */; };
+		0428747222CC421300998A58 /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0428747122CC421300998A58 /* UIHelper.swift */; };
+		0428747422CC429000998A58 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0428747322CC429000998A58 /* UIColorExtension.swift */; };
+		0428747822CC445900998A58 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0428747622CC445900998A58 /* SearchTableViewCell.swift */; };
+		0428747922CC445900998A58 /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0428747722CC445900998A58 /* SearchTableViewCell.xib */; };
+		0428747C22CC446800998A58 /* HeroTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0428747A22CC446800998A58 /* HeroTableViewCell.swift */; };
+		0428747D22CC446800998A58 /* HeroTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0428747B22CC446800998A58 /* HeroTableViewCell.xib */; };
+		0428748122CC467700998A58 /* ParallelogramView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0428748022CC467700998A58 /* ParallelogramView.swift */; };
+		0428748322CC589100998A58 /* GlobalUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0428748222CC589100998A58 /* GlobalUtilities.swift */; };
+		0428748522CC712200998A58 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0428748422CC712200998A58 /* UITableViewExtension.swift */; };
+		0428748922CC730500998A58 /* BaseHeroesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0428748822CC730500998A58 /* BaseHeroesTableViewCell.swift */; };
 		FDD76574F0681DBEC6248635 /* Pods_Marvel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FE906528EF37C4061335445 /* Pods_Marvel.framework */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +70,17 @@
 		0428746622CC116F00998A58 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		0428746A22CC150600998A58 /* HeroesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesListViewController.swift; sourceTree = "<group>"; };
 		0428746B22CC150600998A58 /* HeroesListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeroesListViewController.xib; sourceTree = "<group>"; };
+		0428746F22CC3D2900998A58 /* BaseHeroesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseHeroesListViewController.swift; sourceTree = "<group>"; };
+		0428747122CC421300998A58 /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
+		0428747322CC429000998A58 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		0428747622CC445900998A58 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
+		0428747722CC445900998A58 /* SearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchTableViewCell.xib; sourceTree = "<group>"; };
+		0428747A22CC446800998A58 /* HeroTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroTableViewCell.swift; sourceTree = "<group>"; };
+		0428747B22CC446800998A58 /* HeroTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeroTableViewCell.xib; sourceTree = "<group>"; };
+		0428748022CC467700998A58 /* ParallelogramView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParallelogramView.swift; sourceTree = "<group>"; };
+		0428748222CC589100998A58 /* GlobalUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalUtilities.swift; sourceTree = "<group>"; };
+		0428748422CC712200998A58 /* UITableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
+		0428748822CC730500998A58 /* BaseHeroesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseHeroesTableViewCell.swift; sourceTree = "<group>"; };
 		1FE906528EF37C4061335445 /* Pods_Marvel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Marvel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		25B143EBD267F86E666AA131 /* Pods-Marvel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marvel.release.xcconfig"; path = "Pods/Target Support Files/Pods-Marvel/Pods-Marvel.release.xcconfig"; sourceTree = "<group>"; };
 		979C144210084525D2AF4288 /* Pods-Marvel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marvel.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Marvel/Pods-Marvel.debug.xcconfig"; sourceTree = "<group>"; };
@@ -97,6 +119,7 @@
 		0428741E22CBE0D500998A58 /* Marvel */ = {
 			isa = PBXGroup;
 			children = (
+				0428747F22CC465E00998A58 /* CustomComponents */,
 				0428746522CC115B00998A58 /* Constants */,
 				0428745E22CC0F0F00998A58 /* Helpers */,
 				0428743122CBE3A000998A58 /* Extensions */,
@@ -115,6 +138,8 @@
 			children = (
 				0428743222CBE3A000998A58 /* CollectionExtensions.swift */,
 				0428746322CC10D200998A58 /* SwiftTypeExtensions.swift */,
+				0428747322CC429000998A58 /* UIColorExtension.swift */,
+				0428748422CC712200998A58 /* UITableViewExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -166,7 +191,7 @@
 		0428743B22CBE47200998A58 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				0428746122CC109D00998A58 /* ParameterModel.swift */,
+				0428748622CC71CE00998A58 /* RequestModel */,
 				0428743E22CBE48E00998A58 /* BasicModels */,
 				0428743D22CBE48300998A58 /* ResponseModels */,
 				0428743C22CBE47900998A58 /* Source */,
@@ -234,6 +259,8 @@
 			isa = PBXGroup;
 			children = (
 				0428745F22CC0F1F00998A58 /* HashGenerator.swift */,
+				0428747122CC421300998A58 /* UIHelper.swift */,
+				0428748222CC589100998A58 /* GlobalUtilities.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -249,6 +276,7 @@
 		0428746822CC14E600998A58 /* Xibs */ = {
 			isa = PBXGroup;
 			children = (
+				0428747522CC443100998A58 /* Cells */,
 				0428746B22CC150600998A58 /* HeroesListViewController.xib */,
 			);
 			path = Xibs;
@@ -257,9 +285,62 @@
 		0428746922CC14EE00998A58 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				0428747E22CC446B00998A58 /* CellClasses */,
+				0428746E22CC3D1000998A58 /* Base */,
 				0428746A22CC150600998A58 /* HeroesListViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		0428746E22CC3D1000998A58 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				0428746F22CC3D2900998A58 /* BaseHeroesListViewController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		0428747522CC443100998A58 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				0428747722CC445900998A58 /* SearchTableViewCell.xib */,
+				0428747B22CC446800998A58 /* HeroTableViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		0428747E22CC446B00998A58 /* CellClasses */ = {
+			isa = PBXGroup;
+			children = (
+				0428748722CC72D200998A58 /* BaseCell */,
+				0428747A22CC446800998A58 /* HeroTableViewCell.swift */,
+				0428747622CC445900998A58 /* SearchTableViewCell.swift */,
+			);
+			path = CellClasses;
+			sourceTree = "<group>";
+		};
+		0428747F22CC465E00998A58 /* CustomComponents */ = {
+			isa = PBXGroup;
+			children = (
+				0428748022CC467700998A58 /* ParallelogramView.swift */,
+			);
+			path = CustomComponents;
+			sourceTree = "<group>";
+		};
+		0428748622CC71CE00998A58 /* RequestModel */ = {
+			isa = PBXGroup;
+			children = (
+				0428746122CC109D00998A58 /* ParameterModel.swift */,
+			);
+			path = RequestModel;
+			sourceTree = "<group>";
+		};
+		0428748722CC72D200998A58 /* BaseCell */ = {
+			isa = PBXGroup;
+			children = (
+				0428748822CC730500998A58 /* BaseHeroesTableViewCell.swift */,
+			);
+			path = BaseCell;
 			sourceTree = "<group>";
 		};
 		236CFF29340CFB658267DBC4 /* Pods */ = {
@@ -340,6 +421,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0428742A22CBE0E000998A58 /* LaunchScreen.storyboard in Resources */,
+				0428747922CC445900998A58 /* SearchTableViewCell.xib in Resources */,
+				0428747D22CC446800998A58 /* HeroTableViewCell.xib in Resources */,
 				0428742722CBE0E000998A58 /* Assets.xcassets in Resources */,
 				0428746D22CC150600998A58 /* HeroesListViewController.xib in Resources */,
 			);
@@ -428,6 +511,8 @@
 				0428743622CBE3A100998A58 /* ErrorModel.swift in Sources */,
 				0428746722CC116F00998A58 /* Constants.swift in Sources */,
 				0428746422CC10D200998A58 /* SwiftTypeExtensions.swift in Sources */,
+				0428747222CC421300998A58 /* UIHelper.swift in Sources */,
+				0428747422CC429000998A58 /* UIColorExtension.swift in Sources */,
 				0428745922CBF5BF00998A58 /* UrlModel.swift in Sources */,
 				0428744722CBE5C700998A58 /* HeroesRequestClass.swift in Sources */,
 				0428745B22CBF69200998A58 /* HeroesListViewModel.swift in Sources */,
@@ -436,15 +521,22 @@
 				0428745422CBF3C300998A58 /* DetailsModel.swift in Sources */,
 				0428744B22CBEF5D00998A58 /* HeroesListResponseModel.swift in Sources */,
 				0428746C22CC150600998A58 /* HeroesListViewController.swift in Sources */,
+				0428748922CC730500998A58 /* BaseHeroesTableViewCell.swift in Sources */,
 				0428745122CBF31000998A58 /* ThumbnailModel.swift in Sources */,
+				0428747C22CC446800998A58 /* HeroTableViewCell.swift in Sources */,
+				0428748322CC589100998A58 /* GlobalUtilities.swift in Sources */,
 				0428746022CC0F1F00998A58 /* HashGenerator.swift in Sources */,
 				0428744522CBE55000998A58 /* HeoresDao.swift in Sources */,
 				0428744322CBE4D800998A58 /* HeroesDataSourceContract.swift in Sources */,
 				0428742022CBE0D700998A58 /* AppDelegate.swift in Sources */,
+				0428747022CC3D2900998A58 /* BaseHeroesListViewController.swift in Sources */,
 				0428744922CBE62800998A58 /* HeroesRepository.swift in Sources */,
 				0428745722CBF41D00998A58 /* DetailsItemModel.swift in Sources */,
+				0428747822CC445900998A58 /* SearchTableViewCell.swift in Sources */,
+				0428748122CC467700998A58 /* ParallelogramView.swift in Sources */,
 				0428743522CBE3A100998A58 /* CollectionExtensions.swift in Sources */,
 				0428744F22CBF0E500998A58 /* HeroModel.swift in Sources */,
+				0428748522CC712200998A58 /* UITableViewExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
