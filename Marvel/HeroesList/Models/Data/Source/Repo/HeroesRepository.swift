@@ -14,18 +14,15 @@ import RealmSwift
 import Alamofire
 
 
-class HeroesRepository<REMOTE:Mappable,LOCAL:Object>:
-HeroesDataSourceContract {
+class HeroesRepository:HeroesDataSourceContract {
   
     
     
-    typealias T = REMOTE
+    private let objMessagesRequestClass:HeroesRequestClass = HeroesRequestClass()
+    private let objMessageDao:HeoresDao = HeoresDao()
     
-    private let objMessagesRequestClass:HeroesRequestClass = HeroesRequestClass<REMOTE>()
-    private let objMessageDao:HeoresDao = HeoresDao<LOCAL>()
-    
-    public private(set) var objObservableDao = PublishSubject<LOCAL>()
-    public private(set) var objObservableRemote = PublishSubject<REMOTE>()
+    public private(set) var objObservableDao = PublishSubject<HeroesListModel>()
+    public private(set) var objObservableRemote = PublishSubject<HeroesListResponseModel>()
     
     public var errorModel = PublishSubject<ErrorModel>()
     public var offset = 0
@@ -72,7 +69,7 @@ HeroesDataSourceContract {
 
     }
     
-    func callApi(url: String, params: Parameters?, headers: HTTPHeaders?) -> Observable<REMOTE>? {
+    func callApi(url: String, params: Parameters?, headers: HTTPHeaders?) -> Observable<HeroesListResponseModel>? {
         if let objObserve = objMessagesRequestClass.callApi(url: url,   params: params, headers: headers)
         {
             return objObserve
@@ -81,21 +78,20 @@ HeroesDataSourceContract {
     }
 }
 extension HeroesRepository{
-    typealias U = LOCAL
     
-    func fetch() -> LOCAL? {
+    func fetch() -> HeroesListModel? {
         return objMessageDao.fetch()
     }
     
-    func fetch(withOffset: Int) -> LOCAL? {
+    func fetch(withOffset: Int) -> HeroesListModel? {
         return objMessageDao.fetch(withOffset: withOffset)
     }
     
-    func fetchArray() -> [LOCAL]? {
+    func fetchArray() -> [HeroesListModel]? {
         return objMessageDao.fetchArray()
     }
     
-    func insert(heroesResponseModel: LOCAL) {
+    func insert(heroesResponseModel: HeroesListModel) {
         objMessageDao.insert(heroesResponseModel: heroesResponseModel)
     }
     

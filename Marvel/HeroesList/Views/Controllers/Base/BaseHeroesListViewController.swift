@@ -199,9 +199,17 @@ extension BaseHeroesListViewController : UITableViewDataSource{
         return getCustomCell(tableView, cellForRowAt: indexPath)
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        didSelectCellAt(indexPath: indexPath)
+    }
+    
     @objc func getCustomCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         return UITableViewCell.init()
+    }
+    @objc func didSelectCellAt(indexPath: IndexPath)  {
+        
+       
     }
 }
 

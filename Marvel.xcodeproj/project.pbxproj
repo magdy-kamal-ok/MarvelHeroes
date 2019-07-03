@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0424122422CD14D6003E478B /* HeroDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0424122222CD14D6003E478B /* HeroDetailsViewController.swift */; };
+		0424122522CD14D6003E478B /* HeroDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0424122322CD14D6003E478B /* HeroDetailsViewController.xib */; };
+		0424122B22CD179B003E478B /* HeroImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0424122922CD179B003E478B /* HeroImageTableViewCell.swift */; };
+		0424122C22CD179B003E478B /* HeroImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0424122A22CD179B003E478B /* HeroImageTableViewCell.xib */; };
+		0424123322CD17DD003E478B /* HeroCollectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0424123122CD17DD003E478B /* HeroCollectionTableViewCell.swift */; };
+		0424123422CD17DD003E478B /* HeroCollectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0424123222CD17DD003E478B /* HeroCollectionTableViewCell.xib */; };
+		0424123722CD1C69003E478B /* HeroLinkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0424123522CD1C69003E478B /* HeroLinkTableViewCell.swift */; };
+		0424123822CD1C69003E478B /* HeroLinkTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0424123622CD1C69003E478B /* HeroLinkTableViewCell.xib */; };
 		0428742022CBE0D700998A58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0428741F22CBE0D700998A58 /* AppDelegate.swift */; };
 		0428742722CBE0E000998A58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0428742622CBE0E000998A58 /* Assets.xcassets */; };
 		0428742A22CBE0E000998A58 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0428742822CBE0E000998A58 /* LaunchScreen.storyboard */; };
@@ -45,6 +53,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0424122222CD14D6003E478B /* HeroDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDetailsViewController.swift; sourceTree = "<group>"; };
+		0424122322CD14D6003E478B /* HeroDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeroDetailsViewController.xib; sourceTree = "<group>"; };
+		0424122922CD179B003E478B /* HeroImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroImageTableViewCell.swift; sourceTree = "<group>"; };
+		0424122A22CD179B003E478B /* HeroImageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeroImageTableViewCell.xib; sourceTree = "<group>"; };
+		0424123122CD17DD003E478B /* HeroCollectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroCollectionTableViewCell.swift; sourceTree = "<group>"; };
+		0424123222CD17DD003E478B /* HeroCollectionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeroCollectionTableViewCell.xib; sourceTree = "<group>"; };
+		0424123522CD1C69003E478B /* HeroLinkTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroLinkTableViewCell.swift; sourceTree = "<group>"; };
+		0424123622CD1C69003E478B /* HeroLinkTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeroLinkTableViewCell.xib; sourceTree = "<group>"; };
 		0428741C22CBE0D300998A58 /* Marvel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Marvel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0428741F22CBE0D700998A58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0428742622CBE0E000998A58 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -98,6 +114,61 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0424121E22CD149C003E478B /* HeroDetails */ = {
+			isa = PBXGroup;
+			children = (
+				0424121F22CD14AF003E478B /* Views */,
+			);
+			path = HeroDetails;
+			sourceTree = "<group>";
+		};
+		0424121F22CD14AF003E478B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0424122122CD14BA003E478B /* Controllers */,
+				0424122022CD14B4003E478B /* Xibs */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0424122022CD14B4003E478B /* Xibs */ = {
+			isa = PBXGroup;
+			children = (
+				0424122622CD1742003E478B /* Cells */,
+				0424122322CD14D6003E478B /* HeroDetailsViewController.xib */,
+			);
+			path = Xibs;
+			sourceTree = "<group>";
+		};
+		0424122122CD14BA003E478B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0424122722CD1748003E478B /* CellClasses */,
+				0424122222CD14D6003E478B /* HeroDetailsViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		0424122622CD1742003E478B /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				0424122A22CD179B003E478B /* HeroImageTableViewCell.xib */,
+				0424123222CD17DD003E478B /* HeroCollectionTableViewCell.xib */,
+				0424123622CD1C69003E478B /* HeroLinkTableViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		0424122722CD1748003E478B /* CellClasses */ = {
+			isa = PBXGroup;
+			children = (
+				0424123522CD1C69003E478B /* HeroLinkTableViewCell.swift */,
+				0424122922CD179B003E478B /* HeroImageTableViewCell.swift */,
+				0424123122CD17DD003E478B /* HeroCollectionTableViewCell.swift */,
+			);
+			path = CellClasses;
+			sourceTree = "<group>";
+		};
 		0428741322CBE0D200998A58 = {
 			isa = PBXGroup;
 			children = (
@@ -125,6 +196,7 @@
 				0428743122CBE3A000998A58 /* Extensions */,
 				0428743322CBE3A100998A58 /* GloabalModels */,
 				0428743722CBE40500998A58 /* HeroesList */,
+				0424121E22CD149C003E478B /* HeroDetails */,
 				0428741F22CBE0D700998A58 /* AppDelegate.swift */,
 				0428742622CBE0E000998A58 /* Assets.xcassets */,
 				0428742822CBE0E000998A58 /* LaunchScreen.storyboard */,
@@ -422,9 +494,13 @@
 			files = (
 				0428742A22CBE0E000998A58 /* LaunchScreen.storyboard in Resources */,
 				0428747922CC445900998A58 /* SearchTableViewCell.xib in Resources */,
+				0424123822CD1C69003E478B /* HeroLinkTableViewCell.xib in Resources */,
 				0428747D22CC446800998A58 /* HeroTableViewCell.xib in Resources */,
 				0428742722CBE0E000998A58 /* Assets.xcassets in Resources */,
+				0424123422CD17DD003E478B /* HeroCollectionTableViewCell.xib in Resources */,
 				0428746D22CC150600998A58 /* HeroesListViewController.xib in Resources */,
+				0424122522CD14D6003E478B /* HeroDetailsViewController.xib in Resources */,
+				0424122C22CD179B003E478B /* HeroImageTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -512,6 +588,7 @@
 				0428747222CC421300998A58 /* UIHelper.swift in Sources */,
 				0428747422CC429000998A58 /* UIColorExtension.swift in Sources */,
 				0428745922CBF5BF00998A58 /* UrlModel.swift in Sources */,
+				0424123322CD17DD003E478B /* HeroCollectionTableViewCell.swift in Sources */,
 				0428744722CBE5C700998A58 /* HeroesRequestClass.swift in Sources */,
 				0428745B22CBF69200998A58 /* HeroesListViewModel.swift in Sources */,
 				0428744D22CBF02800998A58 /* HeroesListModel.swift in Sources */,
@@ -528,13 +605,16 @@
 				0428744322CBE4D800998A58 /* HeroesDataSourceContract.swift in Sources */,
 				0428742022CBE0D700998A58 /* AppDelegate.swift in Sources */,
 				0428747022CC3D2900998A58 /* BaseHeroesListViewController.swift in Sources */,
+				0424122B22CD179B003E478B /* HeroImageTableViewCell.swift in Sources */,
 				0428744922CBE62800998A58 /* HeroesRepository.swift in Sources */,
+				0424122422CD14D6003E478B /* HeroDetailsViewController.swift in Sources */,
 				0428745722CBF41D00998A58 /* DetailsItemModel.swift in Sources */,
 				0428747822CC445900998A58 /* SearchTableViewCell.swift in Sources */,
 				0428748122CC467700998A58 /* ParallelogramView.swift in Sources */,
 				0428743522CBE3A100998A58 /* CollectionExtensions.swift in Sources */,
 				0428744F22CBF0E500998A58 /* HeroModel.swift in Sources */,
 				0428748522CC712200998A58 /* UITableViewExtension.swift in Sources */,
+				0424123722CD1C69003E478B /* HeroLinkTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

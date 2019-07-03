@@ -18,24 +18,22 @@ typealias HeroesDataSourceContract = HeroesDataRemoteSource & HeroesDataLocalSou
 
 protocol HeroesDataRemoteSource {
     
-    associatedtype T:Mappable
     
-    func callApi(url:String ,params : Parameters?,headers:HTTPHeaders?) -> Observable<T>?
+    func callApi(url:String ,params : Parameters?,headers:HTTPHeaders?) -> Observable<HeroesListResponseModel>?
     
 }
 
 
 protocol HeroesDataLocalSource {
     
-    associatedtype U:Object
     
-    func fetch()->U?
+    func fetch()->HeroesListModel?
     
-    func fetch(withOffset:Int)->U?
+    func fetch(withOffset:Int)->HeroesListModel?
     
-    func fetchArray()->[U]?
+    func fetchArray()->[HeroesListModel]?
     
-    func insert(heroesResponseModel : U)
+    func insert(heroesResponseModel : HeroesListModel)
     
     func delete()
     

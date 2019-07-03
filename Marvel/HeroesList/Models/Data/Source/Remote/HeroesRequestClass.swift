@@ -11,11 +11,10 @@ import RxSwift
 import ObjectMapper
 import Alamofire
 
-class HeroesRequestClass<U:Mappable>: HeroesDataRemoteSource {
+class HeroesRequestClass: HeroesDataRemoteSource {
     
-    typealias T = U
     
-    func callApi(url:String ,params : Parameters?, headers:HTTPHeaders?)->Observable<U>? {
+    func callApi(url:String ,params : Parameters?, headers:HTTPHeaders?)->Observable<HeroesListResponseModel>? {
         return  Observable.create{
             observer in
             Alamofire.request(url,
@@ -29,7 +28,7 @@ class HeroesRequestClass<U:Mappable>: HeroesDataRemoteSource {
                             else {
                                 return
                         }
-                        let responseObj = U(JSON: value)
+                        let responseObj = HeroesListResponseModel(JSON: value)
                         observer.onNext(responseObj!)
                     case .failure(let error):
                         observer.onError(error)

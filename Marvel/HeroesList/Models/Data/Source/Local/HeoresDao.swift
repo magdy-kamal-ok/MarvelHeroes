@@ -10,10 +10,10 @@ import Foundation
 import RealmSwift
 import ObjectMapper
 
-class HeoresDao<R:Object>: HeroesDataLocalSource{
+class HeoresDao: HeroesDataLocalSource{
 
     
-    func insert(heroesResponseModel : R) {
+    func insert(heroesResponseModel : HeroesListModel) {
         do {
             let realm = try Realm()
             realm.beginWrite()
@@ -24,19 +24,19 @@ class HeoresDao<R:Object>: HeroesDataLocalSource{
         }
     }
 
-    func fetch()->R? {
+    func fetch()->HeroesListModel? {
         do {
             let realm = try  Realm()
-            return realm.objects(R.self).first
+            return realm.objects(HeroesListModel.self).first
         } catch (let error) {
             print(error)
             return nil
         }
     }
-    func fetch(withOffset:Int)-> R? {
+    func fetch(withOffset:Int)-> HeroesListModel? {
         do {
-            let realm = try  Realm()
-            return realm.objects(R.self).filter("offset=%@", withOffset).first
+            let realm = try Realm()
+            return realm.objects(HeroesListModel.self).filter("offset=%@", withOffset).first
             
         } catch (let error) {
             print(error)
@@ -44,10 +44,10 @@ class HeoresDao<R:Object>: HeroesDataLocalSource{
         }
     }
     
-    func fetchArray()->[R]? {
+    func fetchArray()->[HeroesListModel]? {
         do {
             let realm = try  Realm()
-            return realm.objects(R.self).itemsResltToArray()
+            return realm.objects(HeroesListModel.self).itemsResltToArray()
         } catch (let error) {
             print(error)
             return nil
@@ -58,7 +58,7 @@ class HeoresDao<R:Object>: HeroesDataLocalSource{
         do {
             let realm = try Realm()
             realm.beginWrite()
-            realm.delete(realm.objects(R.self))
+            realm.delete(realm.objects(HeroesListModel.self))
             try realm.commitWrite()
         } catch (let error) {
             print(error)

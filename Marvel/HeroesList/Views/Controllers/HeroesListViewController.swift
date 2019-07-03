@@ -82,6 +82,18 @@ class HeroesListViewController: BaseHeroesListViewController {
         }
     }
     
+    override func didSelectCellAt(indexPath: IndexPath) {
+        let heroModel = self.heroesListViewModel?.heroesList[indexPath.row] as! HeroModel
+        openHeroDetails(with: heroModel)
+    }
+    
+    func openHeroDetails(with heroModel:HeroModel)
+    {
+        let heroDetailsViewController = HeroDetailsViewController.init(nibName: "HeroDetailsViewController", bundle: nil)
+        heroDetailsViewController.heroModel = heroModel
+        self.navigationController?.pushViewController(heroDetailsViewController, animated: true)
+        
+    }
     override func swipeRefreshTableView() {
         self.heroesListViewModel?.refreshMoviesList()
         

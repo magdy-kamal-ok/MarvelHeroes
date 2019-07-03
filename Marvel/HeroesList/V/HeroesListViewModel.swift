@@ -23,7 +23,7 @@ protocol HeroesViewControllerDelegate: NSObjectProtocol {
 }
 
 class HeroesListViewModel: NSObject {
-    private var repo = HeroesRepository<HeroesListResponseModel,HeroesListModel>()
+    private var repo = HeroesRepository()
     
     private var disposeBag = DisposeBag()
     public private(set) var resultMessagesObjs = PublishSubject<[HeroModel]>()
