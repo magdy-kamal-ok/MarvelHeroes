@@ -1,7 +1,6 @@
 PODS:
   - Alamofire (4.8.2)
   - CryptoSwift (1.0.0)
-  - IQKeyboardManagerSwift (6.2.1)
   - ObjectMapper (3.4.2)
   - "ObjectMapper+Realm (0.6)":
     - ObjectMapper
@@ -27,7 +26,6 @@ PODS:
 DEPENDENCIES:
   - Alamofire
   - CryptoSwift
-  - IQKeyboardManagerSwift
   - ObjectMapper
   - "ObjectMapper+Realm"
   - ReachabilitySwift (= 4.3.0)
@@ -43,7 +41,6 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
     - CryptoSwift
-    - IQKeyboardManagerSwift
     - ObjectMapper
     - "ObjectMapper+Realm"
     - ReachabilitySwift
@@ -59,7 +56,6 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
   CryptoSwift: d81eeaa59dc5a8d03720fe919a6fd07b51f7439f
-  IQKeyboardManagerSwift: 0f0ae8935360b4003e6ea1ac7c19898f01e2f7c7
   ObjectMapper: 0d4402610f4e468903ae64629eec4784531e5c51
   "ObjectMapper+Realm": 4cf44ed3202a73f08594e21e13eb3f8aa9b5a664
   ReachabilitySwift: 408477d1b6ed9779dba301953171e017c31241f3
@@ -72,6 +68,6 @@ SPEC CHECKSUMS:
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   TWMessageBarManager: fd84e7948ba7968a2b5d9454859135761214ec56
 
-PODFILE CHECKSUM: 9db3c7cafe69a3f74c584e5e8584c1ed83beb8b8
+PODFILE CHECKSUM: 61c6b92da1b32025d5b9ff4fd7d737404f9b7a06
 
 COCOAPODS: 1.5.3

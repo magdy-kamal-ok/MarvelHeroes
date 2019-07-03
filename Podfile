@@ -25,7 +25,6 @@ target 'Marvel' do
 
      pod 'TWMessageBarManager'
      pod 'SVProgressHUD'
-     pod 'IQKeyboardManagerSwift'
      pod 'ObjectMapper+Realm'
      
      pod 'CryptoSwift'
