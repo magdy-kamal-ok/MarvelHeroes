@@ -23,11 +23,9 @@ protocol HeroesViewControllerDelegate: NSObjectProtocol {
 }
 
 class HeroesListViewModel: NSObject {
+    
     private var repo = HeroesRepository()
-    
     private var disposeBag = DisposeBag()
-    public private(set) var resultMessagesObjs = PublishSubject<[HeroModel]>()
-    
 
     var searchString = ""
     var isSearch:Bool = false
@@ -85,6 +83,15 @@ class HeroesListViewModel: NSObject {
             //
         }).disposed(by: disposeBag)
         
+        repo.errorModel.asObservable().subscribe(onNext: { (error) in
+            
+            self.getHeroesData()
+            
+        }, onError: { (err) in
+            print(err)
+        }, onCompleted: {
+            //
+        }).disposed(by: disposeBag)
     }
     
     override init() {
@@ -178,23 +185,6 @@ class HeroesListViewModel: NSObject {
     }
     
     
-    func searchLocalDataWith(searchText:String)
-    {
-//        var filteredItems:[ConversationDataModel] = [ConversationDataModel]()
-//        if searchText.isEmpty {
-//            self.resultMessagesObjs.onNext(Array(self.resultMessages))
-//            return
-//        }
-//        for msg in self.resultMessages {
-//
-//            if(msg.users_filter.toArray().first?.translated_name.has(searchText, caseSensitive: false))!
-//            {
-//                filteredItems.append(msg)
-//            }
-//        }
-//        self.resultMessagesObjs.onNext(filteredItems)
-        
-    }
     
     
 }

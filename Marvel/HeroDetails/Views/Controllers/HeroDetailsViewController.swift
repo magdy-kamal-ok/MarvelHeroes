@@ -194,15 +194,19 @@ extension HeroDetailsViewController:UITableViewDelegate, UITableViewDataSource
             return cell
         case .heroComics:
             let cell = tableView.dequeue() as HeroCollectionTableViewCell
+            cell.detailModel = self.heroModel?.comicModel
             return cell
         case .heroSeries:
             let cell = tableView.dequeue() as HeroCollectionTableViewCell
+            cell.detailModel = self.heroModel?.seriesModel
             return cell
         case .heroStories:
             let cell = tableView.dequeue() as HeroCollectionTableViewCell
+            cell.detailModel = self.heroModel?.storiesModel
             return cell
         case .heroEvents:
             let cell = tableView.dequeue() as HeroCollectionTableViewCell
+            cell.detailModel = self.heroModel?.eventsModel
             return cell
         case .heroLinks:
             let cell = tableView.dequeue() as HeroLinkTableViewCell

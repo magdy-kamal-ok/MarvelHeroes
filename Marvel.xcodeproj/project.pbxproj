@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04224F6222CD67B900C14A2D /* HeoresCollectionDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04224F5122CD67B900C14A2D /* HeoresCollectionDao.swift */; };
+		04224F6322CD67B900C14A2D /* HeroesCollectionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04224F5322CD67B900C14A2D /* HeroesCollectionRepository.swift */; };
+		04224F6422CD67B900C14A2D /* HeoresCollectionDataSourceContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04224F5422CD67B900C14A2D /* HeoresCollectionDataSourceContract.swift */; };
+		04224F6522CD67B900C14A2D /* HeroesCollectionRequestClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04224F5622CD67B900C14A2D /* HeroesCollectionRequestClass.swift */; };
+		04224F6722CD67B900C14A2D /* HeroesCollectionListResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04224F5A22CD67B900C14A2D /* HeroesCollectionListResponseModel.swift */; };
+		04224F6A22CD67B900C14A2D /* HeroesCollectionListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04224F5E22CD67B900C14A2D /* HeroesCollectionListModel.swift */; };
+		04224F6B22CD67B900C14A2D /* HeroCollectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04224F5F22CD67B900C14A2D /* HeroCollectionModel.swift */; };
+		04224F7022CD774000C14A2D /* HeroesCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04224F6F22CD774000C14A2D /* HeroesCollectionViewModel.swift */; };
+		04224F7322CD7C4A00C14A2D /* HeroCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04224F7122CD7C4A00C14A2D /* HeroCollectionViewCell.swift */; };
+		04224F7422CD7C4A00C14A2D /* HeroCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04224F7222CD7C4A00C14A2D /* HeroCollectionViewCell.xib */; };
 		0424122422CD14D6003E478B /* HeroDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0424122222CD14D6003E478B /* HeroDetailsViewController.swift */; };
 		0424122522CD14D6003E478B /* HeroDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0424122322CD14D6003E478B /* HeroDetailsViewController.xib */; };
 		0424122B22CD179B003E478B /* HeroImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0424122922CD179B003E478B /* HeroImageTableViewCell.swift */; };
@@ -53,6 +63,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04224F5122CD67B900C14A2D /* HeoresCollectionDao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeoresCollectionDao.swift; sourceTree = "<group>"; };
+		04224F5322CD67B900C14A2D /* HeroesCollectionRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroesCollectionRepository.swift; sourceTree = "<group>"; };
+		04224F5422CD67B900C14A2D /* HeoresCollectionDataSourceContract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeoresCollectionDataSourceContract.swift; sourceTree = "<group>"; };
+		04224F5622CD67B900C14A2D /* HeroesCollectionRequestClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroesCollectionRequestClass.swift; sourceTree = "<group>"; };
+		04224F5A22CD67B900C14A2D /* HeroesCollectionListResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroesCollectionListResponseModel.swift; sourceTree = "<group>"; };
+		04224F5E22CD67B900C14A2D /* HeroesCollectionListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroesCollectionListModel.swift; sourceTree = "<group>"; };
+		04224F5F22CD67B900C14A2D /* HeroCollectionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroCollectionModel.swift; sourceTree = "<group>"; };
+		04224F6F22CD774000C14A2D /* HeroesCollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesCollectionViewModel.swift; sourceTree = "<group>"; };
+		04224F7122CD7C4A00C14A2D /* HeroCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroCollectionViewCell.swift; sourceTree = "<group>"; };
+		04224F7222CD7C4A00C14A2D /* HeroCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeroCollectionViewCell.xib; sourceTree = "<group>"; };
 		0424122222CD14D6003E478B /* HeroDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDetailsViewController.swift; sourceTree = "<group>"; };
 		0424122322CD14D6003E478B /* HeroDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeroDetailsViewController.xib; sourceTree = "<group>"; };
 		0424122922CD179B003E478B /* HeroImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroImageTableViewCell.swift; sourceTree = "<group>"; };
@@ -114,9 +134,89 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04224F2C22CD673400C14A2D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				04224F4E22CD67B900C14A2D /* Data */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		04224F4E22CD67B900C14A2D /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				04224F4F22CD67B900C14A2D /* Source */,
+				04224F5922CD67B900C14A2D /* ResponseModels */,
+				04224F5B22CD67B900C14A2D /* BasicModels */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		04224F4F22CD67B900C14A2D /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				04224F5022CD67B900C14A2D /* Local */,
+				04224F5222CD67B900C14A2D /* Repo */,
+				04224F5522CD67B900C14A2D /* Remote */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		04224F5022CD67B900C14A2D /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				04224F5122CD67B900C14A2D /* HeoresCollectionDao.swift */,
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
+		04224F5222CD67B900C14A2D /* Repo */ = {
+			isa = PBXGroup;
+			children = (
+				04224F5322CD67B900C14A2D /* HeroesCollectionRepository.swift */,
+				04224F5422CD67B900C14A2D /* HeoresCollectionDataSourceContract.swift */,
+			);
+			path = Repo;
+			sourceTree = "<group>";
+		};
+		04224F5522CD67B900C14A2D /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+				04224F5622CD67B900C14A2D /* HeroesCollectionRequestClass.swift */,
+			);
+			path = Remote;
+			sourceTree = "<group>";
+		};
+		04224F5922CD67B900C14A2D /* ResponseModels */ = {
+			isa = PBXGroup;
+			children = (
+				04224F5A22CD67B900C14A2D /* HeroesCollectionListResponseModel.swift */,
+			);
+			path = ResponseModels;
+			sourceTree = "<group>";
+		};
+		04224F5B22CD67B900C14A2D /* BasicModels */ = {
+			isa = PBXGroup;
+			children = (
+				04224F5E22CD67B900C14A2D /* HeroesCollectionListModel.swift */,
+				04224F5F22CD67B900C14A2D /* HeroCollectionModel.swift */,
+			);
+			path = BasicModels;
+			sourceTree = "<group>";
+		};
+		04224F6E22CD76C100C14A2D /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				04224F6F22CD774000C14A2D /* HeroesCollectionViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		0424121E22CD149C003E478B /* HeroDetails */ = {
 			isa = PBXGroup;
 			children = (
+				04224F6E22CD76C100C14A2D /* ViewModels */,
+				04224F2C22CD673400C14A2D /* Models */,
 				0424121F22CD14AF003E478B /* Views */,
 			);
 			path = HeroDetails;
@@ -155,6 +255,7 @@
 				0424122A22CD179B003E478B /* HeroImageTableViewCell.xib */,
 				0424123222CD17DD003E478B /* HeroCollectionTableViewCell.xib */,
 				0424123622CD1C69003E478B /* HeroLinkTableViewCell.xib */,
+				04224F7222CD7C4A00C14A2D /* HeroCollectionViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -162,6 +263,7 @@
 		0424122722CD1748003E478B /* CellClasses */ = {
 			isa = PBXGroup;
 			children = (
+				04224F7122CD7C4A00C14A2D /* HeroCollectionViewCell.swift */,
 				0424123522CD1C69003E478B /* HeroLinkTableViewCell.swift */,
 				0424122922CD179B003E478B /* HeroImageTableViewCell.swift */,
 				0424123122CD17DD003E478B /* HeroCollectionTableViewCell.swift */,
@@ -248,8 +350,7 @@
 			children = (
 				0428745A22CBF69200998A58 /* HeroesListViewModel.swift */,
 			);
-			name = ViewModels;
-			path = V;
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		0428743A22CBE44700998A58 /* Models */ = {
@@ -500,6 +601,7 @@
 				0424123422CD17DD003E478B /* HeroCollectionTableViewCell.xib in Resources */,
 				0428746D22CC150600998A58 /* HeroesListViewController.xib in Resources */,
 				0424122522CD14D6003E478B /* HeroDetailsViewController.xib in Resources */,
+				04224F7422CD7C4A00C14A2D /* HeroCollectionViewCell.xib in Resources */,
 				0424122C22CD179B003E478B /* HeroImageTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -583,11 +685,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				0428743622CBE3A100998A58 /* ErrorModel.swift in Sources */,
+				04224F6B22CD67B900C14A2D /* HeroCollectionModel.swift in Sources */,
+				04224F6522CD67B900C14A2D /* HeroesCollectionRequestClass.swift in Sources */,
 				0428746722CC116F00998A58 /* Constants.swift in Sources */,
 				0428746422CC10D200998A58 /* SwiftTypeExtensions.swift in Sources */,
 				0428747222CC421300998A58 /* UIHelper.swift in Sources */,
 				0428747422CC429000998A58 /* UIColorExtension.swift in Sources */,
+				04224F6322CD67B900C14A2D /* HeroesCollectionRepository.swift in Sources */,
 				0428745922CBF5BF00998A58 /* UrlModel.swift in Sources */,
+				04224F6222CD67B900C14A2D /* HeoresCollectionDao.swift in Sources */,
+				04224F6422CD67B900C14A2D /* HeoresCollectionDataSourceContract.swift in Sources */,
 				0424123322CD17DD003E478B /* HeroCollectionTableViewCell.swift in Sources */,
 				0428744722CBE5C700998A58 /* HeroesRequestClass.swift in Sources */,
 				0428745B22CBF69200998A58 /* HeroesListViewModel.swift in Sources */,
@@ -596,8 +703,10 @@
 				0428745422CBF3C300998A58 /* DetailsModel.swift in Sources */,
 				0428744B22CBEF5D00998A58 /* HeroesListResponseModel.swift in Sources */,
 				0428746C22CC150600998A58 /* HeroesListViewController.swift in Sources */,
+				04224F6722CD67B900C14A2D /* HeroesCollectionListResponseModel.swift in Sources */,
 				0428748922CC730500998A58 /* BaseHeroesTableViewCell.swift in Sources */,
 				0428745122CBF31000998A58 /* ThumbnailModel.swift in Sources */,
+				04224F7322CD7C4A00C14A2D /* HeroCollectionViewCell.swift in Sources */,
 				0428747C22CC446800998A58 /* HeroTableViewCell.swift in Sources */,
 				0428748322CC589100998A58 /* GlobalUtilities.swift in Sources */,
 				0428746022CC0F1F00998A58 /* HashGenerator.swift in Sources */,
@@ -605,6 +714,8 @@
 				0428744322CBE4D800998A58 /* HeroesDataSourceContract.swift in Sources */,
 				0428742022CBE0D700998A58 /* AppDelegate.swift in Sources */,
 				0428747022CC3D2900998A58 /* BaseHeroesListViewController.swift in Sources */,
+				04224F6A22CD67B900C14A2D /* HeroesCollectionListModel.swift in Sources */,
+				04224F7022CD774000C14A2D /* HeroesCollectionViewModel.swift in Sources */,
 				0424122B22CD179B003E478B /* HeroImageTableViewCell.swift in Sources */,
 				0428744922CBE62800998A58 /* HeroesRepository.swift in Sources */,
 				0424122422CD14D6003E478B /* HeroDetailsViewController.swift in Sources */,

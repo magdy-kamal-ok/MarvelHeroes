@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="HeroCollectionViewCell" customModule="Marvel" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="110" height="159"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="110" height="159"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dOq-c2-FDJ">
+                        <rect key="frame" x="8" y="151" width="94" height="0.0"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="I2r-8C-CKm">
+                        <rect key="frame" x="8" y="8" width="94" height="135"/>
+                    </imageView>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="dOq-c2-FDJ" secondAttribute="bottom" constant="8" id="NW2-Cg-wRy"/>
+                <constraint firstAttribute="trailing" secondItem="dOq-c2-FDJ" secondAttribute="trailing" constant="8" id="RFx-rn-itk"/>
+                <constraint firstAttribute="trailing" secondItem="I2r-8C-CKm" secondAttribute="trailing" constant="8" id="YFN-GD-Vfa"/>
+                <constraint firstItem="dOq-c2-FDJ" firstAttribute="top" secondItem="I2r-8C-CKm" secondAttribute="bottom" constant="8" id="YGF-WQ-xrM"/>
+                <constraint firstItem="I2r-8C-CKm" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="YPO-0G-hS3"/>
+                <constraint firstItem="dOq-c2-FDJ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="ble-fx-8m1"/>
+                <constraint firstItem="I2r-8C-CKm" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="pjJ-8a-KVb"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="110" height="159"/>
+            <connections>
+                <outlet property="collectionImageView" destination="I2r-8C-CKm" id="GXp-lG-bUM"/>
+                <outlet property="collectionTitle" destination="dOq-c2-FDJ" id="efX-jC-kpl"/>
+            </connections>
+            <point key="canvasLocation" x="62" y="92"/>
+        </collectionViewCell>
+    </objects>
+</document>

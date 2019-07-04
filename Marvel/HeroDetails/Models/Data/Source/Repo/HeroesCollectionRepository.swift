@@ -1,5 +1,5 @@
 //
-//  HeroesRepository.swift
+//  HeroesCollectionRepository.swift
 //  Marvel
 //
 //  Created by mac on 7/2/19.
@@ -14,26 +14,26 @@ import RealmSwift
 import Alamofire
 
 
-class HeroesRepository:HeroesDataSourceContract {
+class HeroesCollectionRepository:HeoresCollectionDataSourceContract {
   
     
     
-    private let objHeroessRequestClass:HeroesRequestClass = HeroesRequestClass()
-    private let objHeroesDao:HeoresDao = HeoresDao()
+    private let objDetailedHeroRequestClass:HeroesCollectionRequestClass = HeroesCollectionRequestClass()
+    private let objDetailedHeroDao:HeoresCollectionDao = HeoresCollectionDao()
     
-    public private(set) var objObservableDao = PublishSubject<HeroesListModel>()
-    public private(set) var objObservableRemote = PublishSubject<HeroesListResponseModel>()
+    public private(set) var objObservableDao = PublishSubject<[HeroCollectionModel]>()
+    public private(set) var objObservableRemote = PublishSubject<HeroesCollectionListResponseModel>()
     
     public var errorModel = PublishSubject<ErrorModel>()
-    public var offset = 0
     
     private var bag = DisposeBag()
     
+    var id = 0
     
-    func getHeroesData(url:String, data:Parameters?, headers:HTTPHeaders?, bool:Bool = true)
+    func getHeroesCollectionData(url:String, data:Parameters?, headers:HTTPHeaders?, bool:Bool = true)
     {
         if bool{
-            if let cashedData = self.fetch(withOffset: offset)
+            if let cashedData = self.fetch(withId:self.id)
             {
                 objObservableDao.onNext(cashedData)
                 
@@ -69,38 +69,27 @@ class HeroesRepository:HeroesDataSourceContract {
 
     }
     
-    func callApi(url: String, params: Parameters?, headers: HTTPHeaders?) -> Observable<HeroesListResponseModel>? {
-        if let objObserve = objHeroessRequestClass.callApi(url: url,   params: params, headers: headers)
+    func callApi(url: String, params: Parameters?, headers: HTTPHeaders?) -> Observable<HeroesCollectionListResponseModel>? {
+        if let objObserve = objDetailedHeroRequestClass.callApi(url: url,   params: params, headers: headers)
         {
             return objObserve
         }
         return Observable.empty()
     }
 }
-extension HeroesRepository{
-    
-    func fetch() -> HeroesListModel? {
-        return objHeroesDao.fetch()
+extension HeroesCollectionRepository{
+
+    func insert(heroCollectionModels : [HeroCollectionModel])
+    {
+        objDetailedHeroDao.insert(heroCollectionModels: heroCollectionModels)
     }
     
-    func fetch(withOffset: Int) -> HeroesListModel? {
-        return objHeroesDao.fetch(withOffset: withOffset)
+    func fetch(withId:Int)-> [HeroCollectionModel]?
+    {
+        return objDetailedHeroDao.fetch(withId: withId)
     }
+
+
     
-    func fetchArray() -> [HeroesListModel]? {
-        return objHeroesDao.fetchArray()
-    }
-    
-    func insert(heroesResponseModel: HeroesListModel) {
-        objHeroesDao.insert(heroesResponseModel: heroesResponseModel)
-    }
-    
-    
-    func delete() {
-        objHeroesDao.delete()
-    }
-    func searchBy(name: String) -> [HeroModel]? {
-        return objHeroesDao.searchBy(name: name)
-    }
 }
 
