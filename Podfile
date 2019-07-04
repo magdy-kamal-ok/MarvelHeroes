@@ -22,8 +22,9 @@ target 'Marvel' do
      pod 'SDWebImage', '4.4.6'
      #network
      pod 'ReachabilitySwift', '4.3.0'
-
-     pod 'TWMessageBarManager'
+     
+     pod 'SKPhotoBrowser'
+     
      pod 'SVProgressHUD'
      pod 'ObjectMapper+Realm'
      

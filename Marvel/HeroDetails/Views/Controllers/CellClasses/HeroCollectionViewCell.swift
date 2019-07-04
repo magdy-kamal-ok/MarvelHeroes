@@ -12,9 +12,11 @@ class HeroCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var collectionTitle: UILabel!
     
     @IBOutlet weak var collectionImageView: UIImageView!
+    weak var heroDetailViewDelegate:HeroDetailViewDelegate?
     var heroesCollectionViewModel:HeroesCollectionViewModel?
     let disposeBag = DisposeBag()
     var heroesCollection = [HeroCollectionModel]()
+    var heroCollectionModel:HeroCollectionModel?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,6 +25,7 @@ class HeroCollectionViewCell: UICollectionViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         self.heroesCollectionViewModel = nil
+        self.collectionImageView.image = nil
         heroesCollection = [HeroCollectionModel]()
     }
     func configurCell(resourceUrl:String)
@@ -57,6 +60,7 @@ extension HeroCollectionViewCell
     {
         if let response = response
         {
+            self.heroCollectionModel = response
             self.collectionTitle.text = response.title
             if response.images.toArray().count > 0
             {

@@ -10,8 +10,8 @@
 #endif
 #endif
 
-#import "TWMessageBarManager.h"
+#import "SKPhotoBrowser.h"
 
-FOUNDATION_EXPORT double TWMessageBarManagerVersionNumber;
-FOUNDATION_EXPORT const unsigned char TWMessageBarManagerVersionString[];
+FOUNDATION_EXPORT double SKPhotoBrowserVersionNumber;
+FOUNDATION_EXPORT const unsigned char SKPhotoBrowserVersionString[];
 

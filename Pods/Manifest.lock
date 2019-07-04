@@ -20,8 +20,8 @@ PODS:
   - SDWebImage (4.4.6):
     - SDWebImage/Core (= 4.4.6)
   - SDWebImage/Core (4.4.6)
+  - SKPhotoBrowser (6.1.0)
   - SVProgressHUD (2.2.5)
-  - TWMessageBarManager (1.8.1)
 
 DEPENDENCIES:
   - Alamofire
@@ -34,8 +34,8 @@ DEPENDENCIES:
   - RxSwift
   - RxSwiftUtilities
   - SDWebImage (= 4.4.6)
+  - SKPhotoBrowser
   - SVProgressHUD
-  - TWMessageBarManager
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -50,8 +50,8 @@ SPEC REPOS:
     - RxSwift
     - RxSwiftUtilities
     - SDWebImage
+    - SKPhotoBrowser
     - SVProgressHUD
-    - TWMessageBarManager
 
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
@@ -65,9 +65,9 @@ SPEC CHECKSUMS:
   RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
   RxSwiftUtilities: b486df7454cc867c3ea626ce24110511159e7044
   SDWebImage: 3f3f0c02f09798048c47a5ed0a13f17b063572d8
+  SKPhotoBrowser: 343de95d89dc7913763c5dda243cc6e606e4a168
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
-  TWMessageBarManager: fd84e7948ba7968a2b5d9454859135761214ec56
 
-PODFILE CHECKSUM: 61c6b92da1b32025d5b9ff4fd7d737404f9b7a06
+PODFILE CHECKSUM: bfa4726b38adcb281093f31d9dc23173160b136b
 
 COCOAPODS: 1.5.3

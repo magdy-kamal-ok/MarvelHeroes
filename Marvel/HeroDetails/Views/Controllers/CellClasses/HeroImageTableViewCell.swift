@@ -10,6 +10,7 @@ import UIKit
 
 protocol HeroDetailViewDelegate:class {
     func didPressBackBtn()
+    func openPreviewImagesFor(heroCollectionModel:HeroCollectionModel)
 }
 
 class HeroImageTableViewCell: UITableViewCell {

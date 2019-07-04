@@ -22,6 +22,7 @@ class HeroesListViewController: BaseHeroesListViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.isHidden = false
         self.heroesTableView.reloadData()
     }
     // MARK: override required methods needed from parent class
@@ -156,18 +157,16 @@ extension HeroesListViewController:HeroesViewControllerDelegate
 extension HeroesListViewController:UISearchBarDelegate{
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        //
         self.heroesListViewModel?.removeAllDataSource()
         searchBar.tintColor = .red
         self.heroesListViewModel?.isSearch = true
         self.heroesListViewModel?.searchByName(name: searchBar.text!)
-        
-        
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         self.heroesListViewModel?.isSearch = false
         self.navigationItem.titleView = nil
+        self.heroesListViewModel?.removeAllDataSource()
         self.setupSearchBtnNavigation()
         self.setNavTitle()
         self.heroesListViewModel?.isSearch = false

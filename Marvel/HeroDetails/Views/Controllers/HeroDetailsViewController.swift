@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import SKPhotoBrowser
+
 enum SectionType:String {
     case heroInfo = ""
     case heroComics = "COMICS"
@@ -134,6 +136,24 @@ extension HeroDetailsViewController
 }
 extension HeroDetailsViewController:HeroDetailViewDelegate
 {
+    func openPreviewImagesFor(heroCollectionModel: HeroCollectionModel) {
+        var skphotoImages = [SKPhoto]()
+        for img in heroCollectionModel.images.toArray()
+        {
+            let imagePath = img.path+"."+img.exten
+            let photo = SKPhoto.photoWithImageURL(imagePath)
+            photo.shouldCachePhotoURLImage = true
+            photo.caption = heroCollectionModel.title
+            skphotoImages.append(photo)
+
+        }
+        let browser = SKPhotoBrowser(photos: skphotoImages)
+        browser.initializePageIndex(0)
+        SKPhotoBrowserOptions.enableZoomBlackArea    = true
+        SKPhotoBrowserOptions.enableSingleTapDismiss = true
+        self.present(browser, animated: true, completion: nil)
+    }
+    
     func didPressBackBtn() {
         self.navigationController?.popViewController(animated: true)
     }
@@ -194,18 +214,22 @@ extension HeroDetailsViewController:UITableViewDelegate, UITableViewDataSource
             return cell
         case .heroComics:
             let cell = tableView.dequeue() as HeroCollectionTableViewCell
+            cell.heroDetailViewDelegate = self
             cell.detailModel = self.heroModel?.comicModel
             return cell
         case .heroSeries:
             let cell = tableView.dequeue() as HeroCollectionTableViewCell
+            cell.heroDetailViewDelegate = self
             cell.detailModel = self.heroModel?.seriesModel
             return cell
         case .heroStories:
             let cell = tableView.dequeue() as HeroCollectionTableViewCell
+            cell.heroDetailViewDelegate = self
             cell.detailModel = self.heroModel?.storiesModel
             return cell
         case .heroEvents:
             let cell = tableView.dequeue() as HeroCollectionTableViewCell
+            cell.heroDetailViewDelegate = self
             cell.detailModel = self.heroModel?.eventsModel
             return cell
         case .heroLinks:
@@ -216,5 +240,15 @@ extension HeroDetailsViewController:UITableViewDelegate, UITableViewDataSource
         }
     }
     
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let section = self.heroDetailsSections[indexPath.section]
+        if section == .heroLinks
+        {
+            let urlModel = self.heroModel?.urls.toArray()[indexPath.row] as! UrlModel
+            
+            guard let url = URL(string: urlModel.url) else { return }
+            UIApplication.shared.open(url)
+        }
+    }
 }

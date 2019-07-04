@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C273D26BEAEC846097116948BF179582"
-               BlueprintName = "TWMessageBarManager"
+               BlueprintIdentifier = "EF5350BD5C54BA583BE725304C4C6A37"
+               BlueprintName = "SKPhotoBrowser"
                ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "TWMessageBarManager.framework">
+               BuildableName = "SKPhotoBrowser.framework">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

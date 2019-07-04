@@ -11,7 +11,8 @@ import UIKit
 class HeroCollectionTableViewCell: UITableViewCell {
 
     @IBOutlet weak var heroCollectionView: UICollectionView!
-
+    weak var heroDetailViewDelegate:HeroDetailViewDelegate?
+    
     var detailModel:DetailsModel?
     {
         didSet
@@ -22,6 +23,7 @@ class HeroCollectionTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.selectionStyle = .none
         self.heroCollectionView.delegate = self
         self.heroCollectionView.dataSource = self
         self.heroCollectionView.register(UINib.init(nibName: "HeroCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "HeroCollectionViewCell")
@@ -56,6 +58,18 @@ extension HeroCollectionTableViewCell:UICollectionViewDelegate, UICollectionView
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize.init(width: 120, height: collectionView.frame.height)
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath) as! HeroCollectionViewCell
+        if let heroCollectionModel = cell.heroCollectionModel
+        {
+            if heroCollectionModel.images.toArray().count > 0
+            {
+                self.heroDetailViewDelegate?.openPreviewImagesFor(heroCollectionModel: heroCollectionModel)
+            }
+        }
+        
+        
     }
     
 }

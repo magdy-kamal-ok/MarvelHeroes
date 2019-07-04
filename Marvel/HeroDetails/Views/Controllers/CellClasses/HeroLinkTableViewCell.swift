@@ -13,6 +13,7 @@ class HeroLinkTableViewCell: UITableViewCell {
     @IBOutlet weak var linkLbl: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.selectionStyle = .none
         // Initialization code
     }
 
