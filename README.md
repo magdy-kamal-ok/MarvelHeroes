@@ -19,3 +19,6 @@
     c. http://gateway.marvel.com/v1/public/series/1945?apikey=2dbdf6040ce28166d7df8dd2e6577ccd&ts=0D5C8F59-83C4-4683-AAB6-41C82C0E784F&hash=11ff9794f87bd1709908c5fad13c58c6
     (b, c) shows different response
     if the response updated to the first one the code will work fine.
+    
+Please note the api sometimes return duplicated Characters, check 1 offset and 2 offset and you will see,
+always the last 2 or 3 characters the same in the 2 different offset.
